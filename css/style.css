@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 2rem;
+    font-family: "微軟正黑體";
+}
+
+.container {
+    max-width: 60rem;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 42px;
+    color: #CD853F;
+    text-align: center;
+    margin-top: 0;
+}
+
+.gamebox {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    justify-content: center;
+    border: 1px solid #DEB887;
+}
+
+.gamebox > div {
+    position: relative;
+    width: 25%;
+    min-height: 172px;
+    text-align: center;
+    border: 1px solid #DEB887;
+    line-height: 172px;
+    background: #FDF5E6;
+}
+.gamebox > div::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #CD853F;
+    background: #fff;
+    z-index: 10;
+    border-radius: 2px;
+}
+.gamebox > div:nth-child(-n+4)::after {
+    bottom: -10px;
+}
+.gamebox > div:nth-child(n+7)::after {
+    top: -10px;
+}
+.gamebox > div:nth-child(2)::after, .gamebox > div:nth-child(3)::after,
+.gamebox > div:nth-child(9)::after, .gamebox > div:nth-child(10)::after {
+    right: 50%;
+    margin: 0 -10px 0 0;
+}
+.gamebox > div:nth-child(5)::after, .gamebox > div:nth-child(7)::after {
+    top: 50%;
+    margin: -10px 0 0 0;
+}
+.gamebox > div:nth-child(1)::after, .gamebox > div:nth-child(8)::after, .gamebox > div:nth-child(5)::after {
+    right: -10px;
+}
+.gamebox > div:nth-child(4)::after, .gamebox > div:nth-child(7)::after, .gamebox > div:nth-child(11)::after {
+    left: -10px;
+}
+
+
+
+.gamebox > div.active::after {
+    background: #FF4500;
+}
+
+.gamebox > div.g-result {
+    width: 50%;
+    background-size: cover;
+    background-image: url(../image/bg.jpg);
+}
+.gamebox > div.g-result::after {
+    display: none;
+}
+
+
+#startBtn {
+    position: absolute;
+    width: 140px;
+    height: 46px;
+    top: 600px;
+    margin: 0 -70px 0 0;
+    border: 0;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #00BFFF;
+    font-family: "微軟正黑體";
+    color: #fff;
+    /*box-shadow: 4px 4px 4px rgba(0,0,0,0.2), -4px -4px 4px rgba(0,0,0,0.2), 4px 0 4px rgba(0,0,0,0.2), -4px 0 4px rgba(0,0,0,0.2);*/
+    transition: ease .3s;
+}
+#startBtn:hover {
+    background: #87CEFA ;
+}
